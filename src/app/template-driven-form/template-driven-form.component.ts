@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'template-driven-form',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenFormComponent implements OnInit {
 
+  model: SignupComponent = new SignupComponent();
   langs: string[] = [
     'English',
     'German',
