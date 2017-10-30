@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SignupComponent } from '../signup/signup.component';
 
 @Component({
@@ -8,12 +8,23 @@ import { SignupComponent } from '../signup/signup.component';
 })
 export class TemplateDrivenFormComponent implements OnInit {
 
+  @ViewChild("f") form: any;
   model: SignupComponent = new SignupComponent();
   langs: string[] = [
     'English',
     'German',
     'French',
   ];
+
+  onSubmit() {
+      if (this.form.valid) {
+        console.log('Form Submitted');
+      }
+      this.form.reset();
+      
+     
+    
+  }
 
   constructor() { }
 

@@ -1,5 +1,6 @@
 <form novalidate
-#f="ngForm">
+ (ngSubmit)="onSubmit()"
+ #f="ngForm">
   <fieldset ngModelGroup="name">
     <div class="form-group"
     [ngClass]="{'has-error': firstName.invalid && (firstName.dirty || firstName.touched),
@@ -93,9 +94,10 @@
       </option>
     </select>
   </div>
+  <button type="submit" class="btn btn-primary" [disabled]="f.invalid" >Submit</button>
 </form>
 
-<button type="submit" class="btn-primary">Submit</button>
+
 
 <pre>{{ f.value | json }}</pre>
 <pre>Valid? {{ f.form.controls.email?.valid }}</pre>
